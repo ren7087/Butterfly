@@ -1,0 +1,30 @@
+.nav-link {
+  color: #DADFE5;
+  &:hover {
+    color: #FD3378;
+  }
+}
+
+.active {
+  color: #FD3378;
+}
+
+.fa-home {
+  color: #DADFE5;
+}
+
+.fa-thums-up {
+  color: #DADFE5;
+}
+
+.fa-comments {
+  color: #DADFE5;
+}
+
+.fa-user {
+  color: #DADFE5;
+}
+
+.inherit {
+  color: inherit;
+}
