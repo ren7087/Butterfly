@@ -1,0 +1,21 @@
+<div class="text-center">
+  <h1>写真を追加</h1>
+</div>
+
+<div class="row">
+  <div class="col-sm-6 offset-sm-3">
+
+  <%= form_for @user, url: posts_path, method: :post do |f| %>
+     <% if @user.image? %>
+        <%= image_tag @user.image.url %>
+     <% else %>
+        <%= image_tag "/assets/default.jpg", :size => '100x100' %>
+     <% end %>
+        <button type="button" class="btn btn-outline-secondary rounded-pill">
+           <%= f.file_field :image, accept: 'jpeg gif png' %>
+        </button>
+　　  <%= f.submit '更新する', class: 'btn btn-primary' %>
+  <% end %>
+
+  </div>
+</div>
