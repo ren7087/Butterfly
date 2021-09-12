@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users,
-   controllers: { registrations: 'registrations' }
+   controllers: { 
+    registrations: 'registrations',
+    sessions: :sessions
+   }
   root 'toppages#index'
   
   get '/posts/new', to: 'posts#new'
