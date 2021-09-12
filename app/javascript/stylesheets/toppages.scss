@@ -1,18 +1,18 @@
 .jumbotron {
-  background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.05) ), url("~toppages.jpg") center no-repeat;
+  background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.05) ), url("~ffb79b663e72a055d137aa783ed504ef_762fe41e92a3b5488fa97bb5decb9de3.jpg") center no-repeat;
   background-size: cover;
   height: 100vh;
   padding: 0;
   border-radius: 0;
 }
 
-.text-toppages-color {
+.text-top-color {
   color: #FD3378;
   font-weight: 600;
   padding: 6px 24px;
 }
 
-.toppages-title {
+.top-title {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -21,7 +21,7 @@
   white-space: nowrap;
 }
 
-.toppages-authentication {
+.top-authentication {
   position: absolute;
   top: 80%;
   left: 50%;
@@ -49,7 +49,7 @@
 }
 
 @media (min-width: 768px) {
-  .toppages-authentication {
+  .top-authentication {
     &__sign-in-btn {
       display: none;
     }
