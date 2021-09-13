@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_12_124448) do
+ActiveRecord::Schema.define(version: 2021_09_13_003908) do
 
   create_table "posts", charset: "utf8mb4", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -18,6 +18,16 @@ ActiveRecord::Schema.define(version: 2021_09_12_124448) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
+  create_table "reactions", charset: "utf8mb4", force: :cascade do |t|
+    t.bigint "to_user_id", null: false
+    t.bigint "from_user_id", null: false
+    t.integer "status", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["from_user_id"], name: "index_reactions_on_from_user_id"
+    t.index ["to_user_id"], name: "index_reactions_on_to_user_id"
   end
 
   create_table "users", charset: "utf8mb4", force: :cascade do |t|
@@ -38,4 +48,6 @@ ActiveRecord::Schema.define(version: 2021_09_12_124448) do
   end
 
   add_foreign_key "posts", "users"
+  add_foreign_key "reactions", "users", column: "from_user_id"
+  add_foreign_key "reactions", "users", column: "to_user_id"
 end

@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   post '/posts', to: 'posts#create'
   
   resources :users, only: [:show, :index]
+  resources :reactions, only: [:create]
 end
