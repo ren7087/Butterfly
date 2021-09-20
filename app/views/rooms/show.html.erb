@@ -1,0 +1,27 @@
+<div class="room-show-page">
+  <nav class="navbar navbar-light room__header">
+    <%= link_to matching_index_path, class: "nav-item nav-link" do%>
+      <i class="fas fa-chevron-left"></i>
+    <% end %>
+
+    <div class="room__partner">
+      <span class="room__partner-name">
+        <%= @room_user.name %>
+      </span>
+
+      <% if @room_user.profile_image.url.nil? %>
+        <div class="room__partner-default-img"></div>
+      <% else %>
+        <%= image_tag @room_user.profile_image.url, class: "room__partner-img" %>
+      <% end %>
+    </div>
+  </nav>
+
+  <div id='messages'>
+    <%= render @messages %>
+  </div>
+
+  <form class="room__message-form">
+    <textarea data-behavior="room_speaker" data-room_id="<%= @room.id %>" placeholder="メッセージを入力" class="room__message-form_textarea"></textarea>
+  </form>
+</div>
