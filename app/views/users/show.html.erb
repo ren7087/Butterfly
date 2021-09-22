@@ -14,13 +14,13 @@
   <% if current_user.id == @user.id %>
     <div class="user-action">
       <div class="user-action-common">
-        <%= link_to destroy_user_session_path, method: :delete do %>
+        <%= link_to destroy_user_session_path, class: "nav-item nav-link", method: :delete do %>
           <i class="fas fa-sign-out-alt fa-2x"></i>
         <span>ログアウト</span>
         <% end %>
       </div>
       <div class="user-action-common">
-        <%= link_to edit_user_registration_path do %>
+        <%= link_to edit_user_registration_path, class: "nav-item nav-link" do %>
           <i class="fas fa-cog fa-2x"></i>
         <span>プロフィール編集</span>
         <% end %>

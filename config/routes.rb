@@ -10,7 +10,11 @@ Rails.application.routes.draw do
   get '/posts/new', to: 'posts#new'
   post '/posts', to: 'posts#create'
   
-  
+  resources :users do
+    member do
+      get :likes
+    end
+  end
   
   resources :users, only: [:show, :index]
   resources :reactions, only: [:create]

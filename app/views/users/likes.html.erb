@@ -1,0 +1,4 @@
+いいね一覧
+<% User.where(id: liked_users.pluck(:to_user_id)).each do |user|%>
+<%=user.profile_image %>
+<% end %>

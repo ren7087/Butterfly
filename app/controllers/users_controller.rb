@@ -10,10 +10,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
   
-  def reactions
-    @user = User.where(id: liked_users.pluck(:to_user_id))
-    reactions = Reaction.where(from_user_id: current_user_id).where(status: 0)
-    liked_users = Reaction.where(from_user_id: current_user_id).where(status: 0)
+  def likes
+    @user = User.find(params[:id])
+    @liked_users = Reaction.where(from_user_id: current_user_id).where(status: 0)
+    User.where(id: liked_users.pluck(:to_user_id))
   end
   
 end

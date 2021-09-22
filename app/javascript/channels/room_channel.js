@@ -21,7 +21,9 @@ import consumer from "./consumer"
   
 });
 
+/* global location*/
 if(/rooms/.test(location.pathname)) {
+  /* global $*/
   $(document).on("keydown", ".room__message-form_textarea", function(e) {
     if (e.key === "Enter") {
       const room_id = $('textarea').data('room_id')

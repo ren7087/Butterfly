@@ -1,3 +1,4 @@
+/* global location*/
 if(location.pathname == "/users") {
   $(function () {
     const allCards = document.querySelectorAll('.swipe--card');
@@ -5,7 +6,7 @@ if(location.pathname == "/users") {
     const swipeContainer = document.querySelector('.swipe');
 
     function initCards() {
-      const newCards = document.querySelectorAll('.swipe--card:not(.removed)'
+      const newCards = document.querySelectorAll('.swipe--card:not(.removed)');
       
       newCards.forEach(function (card, index) {
         card.style.zIndex = allCards.length - index;
@@ -20,6 +21,7 @@ if(location.pathname == "/users") {
     initCards();
 
     allCards.forEach(function (el) {
+      /* global Hammer*/
       const hammertime = new Hammer(el);
 
       hammertime.on('pan', function (event) {
@@ -106,14 +108,16 @@ if(location.pathname == "/users") {
         
     }
 
-
+    /* global $*/
     $('#like').on('click', function() {
       createButtonListener("like");
     })
-
+    
+    /* global $*/
     $('#dislike').on('click', function() {
       createButtonListener("dislike");
     })
 
   });
 }
+
