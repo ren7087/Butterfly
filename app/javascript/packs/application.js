@@ -18,4 +18,4 @@ import '@fortawesome/fontawesome-free/js/all';
 require('jquery')
 
 // require("src/profile_image_upload");
-require("src/swipe")
+require('src/swipe')

@@ -1,4 +1,9 @@
-いいね一覧
-<% User.where(id: liked_users.pluck(:to_user_id)).each do |user|%>
-<%=user.profile_image %>
-<% end %>
+<div class="user-index-page">
+  <%= render "partial/navbar" %>
+  いいね一覧
+  <% @users.each do |user|%>
+  
+    <%=user.profile_image %>
+  
+  <% end %>
+</div>

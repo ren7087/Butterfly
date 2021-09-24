@@ -2,7 +2,9 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
   
   def index
-    @users = User.where.not(id: current_user.id)
+    @checked_user_ids = Reaction.where(from_user_id: current_user.id).pluck(:to_user_id)
+    users = User.where.not(id: current_user.id)
+    @users = users.where.not(id: @checked_user_ids)
     @user = User.find(current_user.id)
   end
   
@@ -12,8 +14,8 @@ class UsersController < ApplicationController
   
   def likes
     @user = User.find(params[:id])
-    @liked_users = Reaction.where(from_user_id: current_user_id).where(status: 0)
-    User.where(id: liked_users.pluck(:to_user_id))
+    @liked_users = Reaction.where(from_user_id: current_user.id).where(status: 0)
+    @users = User.where(id: @liked_users.pluck(:to_user_id))
   end
   
 end
