@@ -18,4 +18,5 @@ class UsersController < ApplicationController
     @users = User.where(id: @liked_users.pluck(:to_user_id))
   end
   
+  
 end
