@@ -16,8 +16,16 @@ Rails.application.routes.draw do
     end
   end
   
+  resources :users do
+    member do
+      get :liked
+    end
+  end
+  
+  
+  
   resources :users, only: [:show, :index]
   resources :reactions, only: [:create]
   resources :matching, only: [:index]
-  resources :rooms, only: [:create, :show]
+  resources :rooms, only: [:show, :create]
 end

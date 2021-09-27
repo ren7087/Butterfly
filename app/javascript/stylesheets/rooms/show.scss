@@ -17,12 +17,7 @@
         color: #616161;
         vertical-align: middle;
       }
-      &-default-img {
-        height: 32px;
-        width: 32px;
-        border-radius: 50%;
-        
-      }
+      
       &-img {
         height: 32px;
         width: 32px;
@@ -49,13 +44,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    &-default-img {
-      height: 24px;
-      width: 24px;
-      border-radius: 50%;
-      
-      margin-left: 8px;
-    }
+    
     &-img {
       height: 24px;
       width: 24px;

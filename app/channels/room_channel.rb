@@ -9,7 +9,7 @@ class RoomChannel < ApplicationCable::Channel
 
   def speak(data)
     
-    ChatMessage.create!(
+    Message.create!(
       content: data['message'],
       user_id: current_user.id,
       room_id: data['room_id']

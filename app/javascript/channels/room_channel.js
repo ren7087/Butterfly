@@ -10,6 +10,7 @@ import consumer from "./consumer"
   },
 
   received(data) {
+    
     const Messages = document.getElementById('messages');
     Messages.insertAdjacentHTML('beforeend', data['message']);
     // Called when there's incoming data on the websocket for this channel

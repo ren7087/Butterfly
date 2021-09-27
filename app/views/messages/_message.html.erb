@@ -2,7 +2,7 @@
   <% if message.user.id != current_user.id %>
     <div class="message__partner">
       <% if @room_user.profile_image.url.nil? %>
-        <div class="message__partner-default-img"></div>
+        
       <% else %>
         <%= image_tag message.user.profile_image.url, class: "message__partner-img" %>
       <% end %>

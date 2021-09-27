@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_20_012642) do
+ActiveRecord::Schema.define(version: 2021_09_25_132950) do
 
   create_table "messages", charset: "utf8mb4", force: :cascade do |t|
     t.bigint "room_id", null: false
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2021_09_20_012642) do
     t.integer "status", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "profile_image"
     t.index ["from_user_id"], name: "index_reactions_on_from_user_id"
     t.index ["to_user_id"], name: "index_reactions_on_to_user_id"
   end

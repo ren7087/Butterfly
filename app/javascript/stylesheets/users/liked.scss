@@ -1,4 +1,4 @@
-.user-likes-page {
+.user-liked-page {
   max-width: 480px;
   margin: auto 0;
   .profile_image {
@@ -8,7 +8,7 @@
   }
 }
 @media (min-width: 414px) {
-  .user-likes-page {
+  .user-liked-page {
     border: 1px solid rgba(0, 0, 0, 0.125);
     border-radius: 0.25rem;
     margin: 8px auto;
