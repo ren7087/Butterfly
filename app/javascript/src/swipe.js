@@ -1,6 +1,5 @@
-/* global location*/
 if (location.pathname == "/users") {
-  /* global $*/
+
   $(function () {
     let allCards = document.querySelectorAll(".swipe--card");
     let swipeContainer = document.querySelector(".swipe");
@@ -23,7 +22,7 @@ if (location.pathname == "/users") {
     initCards();
 
     allCards.forEach(function (el) {
-      /* global Hammer*/
+      
       let hammertime = new Hammer(el);
 
       hammertime.on("pan", function (event) {
