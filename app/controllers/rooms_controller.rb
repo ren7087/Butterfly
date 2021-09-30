@@ -15,10 +15,10 @@ class RoomsController < ApplicationController
 
   def show
     # ここでRoom_idを検索する。でも複数のroom_idが出てきてしまうので、ログインしてるユーザーとマッチした相手のroom_idだけを抽出する。
-    @room_user = RoomUser.where(user_id: params[:user_id]).pluck(:room_id)
-    @me_room_user = RoomUser.where(user_id: current_user.id).pluck(:room_id)
+    @room_user_ids = RoomUser.where(user_id: params[:user_id]).pluck(:room_id)
+    @me_room_user_ids = RoomUser.where(user_id: current_user.id).pluck(:room_id)
     # @room_userと@me_room_userのかぶってるroom_idが対象のroom_idとなる。
-    @room_user = RoomUser.where(room_id: @room_user & @me_room_user)
+    @room_user = RoomUser.where(room_id: @room_user_ids & @me_room_user_ids)
     @room = Room.find(params[:id])
     #@room_user = @room.room_users.where.not(user_id: current_user.id).first.user
     @messages = Message.where(room: @room)

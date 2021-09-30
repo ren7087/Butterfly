@@ -10,7 +10,7 @@ import '@fortawesome/fontawesome-free/js/all';
 //= require jquery
 //= require jquery.turbolinks
 
-// require("@rails/ujs").start()
+//require("@rails/ujs").start()
 
 // require("@rails/activestorage").start()
 
@@ -18,5 +18,5 @@ require("channels")
 
 require('jquery')
 
-// require("src/profile_image_upload");
+//require("src/profile_image_upload");
 require('src/swipe')
