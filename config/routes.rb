@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     registrations: 'registrations',
     sessions: :sessions
    }
-   
+  mount ActionCable.server, at: '/cable' 
   root 'toppages#index'
   
   get '/posts/new', to: 'posts#new'
@@ -28,4 +28,5 @@ Rails.application.routes.draw do
   resources :reactions, only: [:create]
   resources :matching, only: [:index]
   resources :rooms, only: [:show]
+  
 end

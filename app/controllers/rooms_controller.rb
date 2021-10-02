@@ -21,6 +21,6 @@ class RoomsController < ApplicationController
     @room_user = RoomUser.where(room_id: @room_user_ids & @me_room_user_ids)
     @room = Room.find(params[:id])
     #@room_user = @room.room_users.where.not(user_id: current_user.id).first.user
-    @messages = Message.where(room: @room)
+    @messages = Message.where(room: @room).order(:created_at)
   end
 end
